@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normativa d'Acampada a la Garrotxa</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Georgia', serif;
+        background: #1e1428;
+        color: #f0e8f5;
+        min-height: 100vh;
+        padding: 40px 20px;
+        line-height: 1.6;
+    }
+
+    .infografia {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Capçalera */
+    .capcalera {
+        text-align: center;
+        padding: 50px 30px;
+        background: linear-gradient(135deg, #4a2d6b 0%, #1e1428 100%);
+        border-radius: 20px;
+        margin-bottom: 40px;
+        border: 2px solid #a87dd4;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .capcalera::before {
+        content: '🏕️';
+        position: absolute;
+        font-size: 8rem;
+        opacity: 0.08;
+        top: -20px;
+        right: -10px;
+    }
+
+    .capcalera h1 {
+        font-size: 2.8rem;
+        color: #c9a5e8;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .capcalera p {
+        font-size: 1.1rem;
+        color: #f0e8f5;
+        font-style: italic;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .capcalera .normativa {
+        margin-top: 20px;
+        display: inline-block;
+        background: rgba(201, 165, 232, 0.15);
+        padding: 10px 25px;
+        border-radius: 30px;
+        border: 1px solid rgba(201, 165, 232, 0.5);
+        font-size: 0.9rem;
+        color: #c9a5e8;
+        letter-spacing: 1px;
+    }
+
+    /* Introducció */
+    .intro {
+        background: linear-gradient(160deg, #2d1f3d 0%, #251832 100%);
+        border-radius: 16px;
+        padding: 30px 35px;
+        margin-bottom: 40px;
+        border-left: 5px solid #c9a5e8;
+        font-size: 1rem;
+        color: #e8ddf0;
+    }
+
+    .intro strong {
+        color: #c9a5e8;
+    }
+
+    /* Dues columnes */
+    .columnes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .columna {
+        background: linear-gradient(160deg, #2d1f3d 0%, #251832 100%);
+        border-radius: 16px;
+        padding: 30px 28px;
+        border: 2px solid;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .columna.si {
+        border-color: #6bb87a;
+    }
+
+    .columna.no {
+        border-color: #d4728a;
+    }
+
+    .columna::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+    }
+
+    .columna.si::before {
+        background: #6bb87a;
+    }
+
+    .columna.no::before {
+        background: #d4728a;
+    }
+
+    .columna h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed rgba(201, 165, 232, 0.3);
+    }
+
+    .columna.si h2 {
+        color: #9ee0ab;
+    }
+
+    .columna.no h2 {
+        color: #f0a0b0;
+    }
+
+    .columna h2 .icona {
+        font-size: 1.8rem;
+    }
+
+    .columna ul {
+        list-style: none;
+    }
+
+    .columna ul li {
+        padding: 12px 0;
+        font-size: 0.95rem;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        color: #e8ddf0;
+        border-bottom: 1px solid rgba(201, 165, 232, 0.1);
+    }
+
+    .columna ul li:last-child {
+        border-bottom: none;
+    }
+
+    .columna ul li .marca {
+        font-size: 1.1rem;
+        min-width: 24px;
+        padding-top: 2px;
+    }
+
+    .columna.si ul li .marca {
+        color: #9ee0ab;
+    }
+
+    .columna.no ul li .marca {
+        color: #f0a0b0;
+    }
+
+    .columna ul li strong {
+        color: #d4b8e8;
+        display: block;
+        margin-bottom: 3px;
+    }
+
+    /* Secció requisits tècnics */
+    .requisits {
+        background: linear-gradient(135deg, #4a2d6b 0%, #1e1428 100%);
+        border-radius: 16px;
+        padding: 35px 30px;
+        margin-bottom: 40px;
+        border: 2px solid #a87dd4;
+    }
+
+    .requisits h2 {
+        font-size: 1.6rem;
+        color: #c9a5e8;
+        margin-bottom: 25px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .requisits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .requisit {
+        background: rgba(30, 20, 40, 0.7);
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid rgba(201, 165, 232, 0.25);
+        text-align: center;
+    }
+
+    .requisit .emoji {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .requisit h3 {
+        font-size: 1rem;
+        color: #c9a5e8;
+        margin-bottom: 8px;
+    }
+
+    .requisit p {
+        font-size: 0.85rem;
+        color: #e8ddf0;
+        line-height: 1.5;
+    }
+
+    /* Peu */
+    .peu {
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(135deg, #4a2d6b 0%, #1e1428 100%);
+        border-radius: 16px;
+        border: 2px solid #a87dd4;
+    }
+
+    .peu p {
+        font-size: 0.95rem;
+        color: #c9a5e8;
+        font-style: italic;
+    }
+
+    .peu .dada {
+        font-size: 1.1rem;
+        color: #f0e8f5;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .columnes {
+            grid-template-columns: 1fr;
+        }
+        .capcalera h1 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .capcalera {
+            padding: 35px 20px;
+        }
+        .capcalera h1 {
+            font-size: 1.6rem;
+        }
+        .columna {
+            padding: 22px 20px;
+        }
+        .columna h2 {
+            font-size: 1.4rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="infografia">
+
+    <!-- Capçalera -->
+    <header class="capcalera">
+        <h1>Normativa d'Acampada a la Garrotxa</h1>
+        <p>Requisits d'ubicació i entorn per a activitats d'educació en el lleure amb menors de 18 anys</p>
+        <div class="normativa">Decret 267/2016, de 5 de juliol · Article 7</div>
+    </header>
+
+    <!-- Introducció -->
+    <div class="intro">
+        <strong>Què regula aquesta normativa?</strong><br>
+        Les acampades infantils i juvenils que es duguin a terme <strong>fora d'una instal·lació o lloc d'acampada autoritzats</strong> han de complir una sèrie de requisits d'ubicació, seguretat i funcionament. Aquests requisits entren en vigor des de l'<strong>1 de juny de 2018</strong>.
+    </div>
+
+    <!-- Dues columnes: SÍ / NO -->
+    <div class="columnes">
+
+        <!-- QUÈ SÍ -->
+        <div class="columna si">
+            <h2><span class="icona">✅</span> Què SÍ cal fer</h2>
+            <ul>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Ubicació segura</strong>Fora de rambles, llits secs de rius o torrenteres, terrenys inundables o amb risc d'esllavissades.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Allunyat de perills</strong>Lluny de línies elèctriques d'alta tensió, indústries o instal·lacions insalubres.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Distància mínima de 100 m</strong>De qualsevol via de comunicació, comptant des del punt d'acampada.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Prop d'un camí alternatiu</strong>Que permeti l'evacuació en cas d'incendi forestal.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Usuaris legalment reconeguts</strong>Només grups organitzats d'associacions legalment constituïdes amb finalitat educativa, esportiva o social.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Notificar geolocalització</strong>A la Direcció General de Joventut perquè els cossos de seguretat puguin localitzar el terreny en cas d'emergència.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Senyalitzar el terreny</strong>Amb un rètol que contingui com a mínim el nom del lloc i un telèfon de contacte.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Garantir aigua potable</strong>Mínim 3 litres per persona i dia, apta per beure i cuinar.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Gestionar correctament els residus</strong>Recollir-los i dipositar-los en contenidors municipals o deixalleria.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Sistema d'aigües residuals</strong>Inodors químics, fossa sèptica o altre sistema adequat. Abocar sempre en punts autoritzats.</span>
+                </li>
+                <li>
+                    <span class="marca">✔</span>
+                    <span><strong>Lliurar la normativa d'ús</strong>Un exemplar de la "Normativa d'ús del terreny d'acampada" al grup que hi fa activitats.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- QUÈ NO -->
+        <div class="columna no">
+            <h2><span class="icona">❌</span> Què NO cal fer</h2>
+            <ul>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No acampar en rambles o llits secs</strong>Són zones susceptibles d'inundació sobtada i molt perilloses.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No acampar en terrenys inestables</strong>Zones amb risc d'esllavissades o moviments de terra.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No acampar prop d'alta tensió</strong>Ni indústries, ni instal·lacions insalubres o perilloses.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No acampar a menys de 100 m</strong>De qualsevol via de comunicació (carretera, camí, etc.).</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No acampar sense camí d'evacuació</strong>Cal un camí alternatiu per emergències d'incendi forestal.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No deixar residus al medi</strong>Prohibit abocar deixalles fora dels contenidors o deixalleries.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No abocar aigües residuals</strong>Als rius, torrents o al sòl. Sempre en punts autoritzats.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No acampar sense senyalització</strong>El terreny ha de tenir rètol amb nom i telèfon de contacte.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No permetre usuaris no organitzats</strong>Només grups d'associacions legalment reconegudes amb finalitat educativa.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No oblidar la geolocalització</strong>Cal notificar les coordenades a la Direcció General de Joventut.</span>
+                </li>
+                <li>
+                    <span class="marca">✘</span>
+                    <span><strong>No incomplir la normativa d'ús</strong>El titular ha de lliurar el document acordat amb la Generalitat.</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Requisits tècnics -->
+    <div class="requisits">
+        <h2>📋 Requisits tècnics i de funcionament</h2>
+        <div class="requisits-grid">
+            <div class="requisit">
+                <div class="emoji">👥</div>
+                <h3>Usuaris</h3>
+                <p>Només grups organitzats d'associacions legalment reconegudes amb finalitat educativa, esportiva o d'utilitat social.</p>
+            </div>
+            <div class="requisit">
+                <div class="emoji">📍</div>
+                <h3>Geolocalització</h3>
+                <p>Notificar les coordenades a la Direcció General de Joventut per a emergències i inspeccions.</p>
+            </div>
+            <div class="requisit">
+                <div class="emoji">🪧</div>
+                <h3>Senyalització</h3>
+                <p>Rètol visible amb el nom del lloc i un telèfon de contacte.</p>
+            </div>
+            <div class="requisit">
+                <div class="emoji">💧</div>
+                <h3>Aigua potable</h3>
+                <p>Mínim 3 litres per persona i dia, apta per beure i cuinar.</p>
+            </div>
+            <div class="requisit">
+                <div class="emoji">🗑️</div>
+                <h3>Deixalles</h3>
+                <p>Gestió correcta: contenidors municipals o deixalleria.</p>
+            </div>
+            <div class="requisit">
+                <div class="emoji">🚽</div>
+                <h3>Aigües residuals</h3>
+                <p>Inodors químics, fossa sèptica o sistema adequat. Abocar en punts autoritzats.</p>
+            </div>
+            <div class="requisit">
+                <div class="emoji">📄</div>
+                <h3>Informació als usuaris</h3>
+                <p>Lliurar la "Normativa d'ús del terreny d'acampada" acordada amb la Generalitat.</p>
+            </div>
+            <div class="requisit">
+                <div class="emoji">📅</div>
+                <h3>Vigència</h3>
+                <p>Requisits en vigor des de l'1 de juny de 2018.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Peu -->
+    <footer class="peu">
+        <div class="dada">Decret 267/2016, de 5 de juliol</div>
+        <p>Direcció General de Joventut · Departament de Treball, Afers Socials i Famílies · Generalitat de Catalunya</p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">Carrer de Calàbria, 147 · 08015 Barcelona · Tel. 93 483 83 83</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
